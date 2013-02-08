@@ -22,7 +22,9 @@
 
     <util:map id="jpaPropertyMap">
         <entry key="hibernate.show_sql" value="true" />
-        <entry key="hibernate.connection.url" value="jdbc:hsqldb:file:/tmp/tablestore.dat"/>
+        <entry key="hibernate.connection.url" value="jdbc:hsqldb:mem:brew"/>
+        <entry key="hibernate.format_sql" value="true"/>
+        <entry key="hibernate.hbm2ddl.auto" value="update" />
     </util:map>
 
     <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
@@ -33,7 +35,10 @@
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
           p:entityManagerFactory-ref="entityManagerFactory"/>
 
-    <jdbc:embedded-database id="datasource" type="HSQL"/>
+    <jdbc:embedded-database id="datasource" type="HSQL">
+        <jdbc:script location="classpath:schema.sql"/>
+        <jdbc:script location="classpath:data.sql"/>
+    </jdbc:embedded-database>
 
     <jpa:repositories base-package="com.littlebigcompany.brew.repositories" />
 </beans>
