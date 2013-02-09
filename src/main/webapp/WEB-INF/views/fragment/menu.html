@@ -7,7 +7,7 @@
                     <th th:text="#{customer.name}">Name</th>
                 </tr>
                 <tr th:each="cus : ${customers}">
-                    <td th:text="${cus.name}">Jean Dupond</td>
+                    <td th:text="#{menu.displayCustomer(${cus.name},${cus.phone})}">Jean Dupond (01 02 03 04 05)</td>
                 </tr>
             </table>
         </div>

@@ -13,6 +13,42 @@ public class Customer {
     private Long id;
 
     private String name;
+    private String address;
+    private Integer zipcode;
+    private String town;
+    private String phone;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Integer getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(Integer zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        this.town = town;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public Long getId() {
         return id;

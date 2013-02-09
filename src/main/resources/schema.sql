@@ -1,4 +1,8 @@
 CREATE TABLE Customer (
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  name VARCHAR(256)
+  name VARCHAR(256),
+  address VARCHAR(256),
+  zipcode INT,
+  town VARCHAR(64),
+  phone VARCHAR(32)
 );
