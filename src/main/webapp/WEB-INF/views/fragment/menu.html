@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="menuFragment">
+        <div th:unless="${#lists.isEmpty(customers)}">
+            <table>
+                    <tr>
+                    <th th:text="#{customer.name}">Name</th>
+                </tr>
+                <tr th:each="cus : ${customers}">
+                    <td th:text="${cus.name}">Jean Dupond</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

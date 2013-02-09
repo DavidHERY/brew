@@ -1,31 +1,14 @@
-<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring3-3.dtd">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml11-thymeleaf-spring3-3.dtd">
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title th:text="#{Title}"></title>
     <link rel="stylesheet" href="../../css/style.css" th:href="@{/css/style.css}"/>
 </head>
 <body>
-<div id="container">
-    <div>
-        <form action="#" th:object="${customer}" th:action="@{/customers}" method="post">
-            <label for="name" th:text="#{customer.name}">Name: </label>
-            <input type="text" th:field="*{name}" />
-            <input type="submit" th:value="#{cusForm.submit}" name="submit" class="submit" />
-        </form>
-    </div>
-
-    <div th:unless="${#lists.isEmpty(customers)}">
-        <table>
-            <tr>
-                <th th:text="#{customer.name}">Name</th>
-            </tr>
-            <tr th:each="cus : ${customers}">
-                <td th:text="${cus.name}">Jean Dupond</td>
-            </tr>
-        </table>
-    </div>
-</div>
+<div id="header" th:include="fragment/header::headerFragment"></div>
+<div id="menu" th:include="fragment/menu::menuFragment" ></div>
+<div id="main" th:include="fragment/main::mainFragment" ></div>
+<div id="footer" th:include="fragment/footer::footerFragment"></div>
 </body>
 </html>

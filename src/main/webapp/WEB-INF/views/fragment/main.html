@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="mainFragment">
+        <div>
+            <form action="#" th:object="${customer}" th:action="@{/customers}" method="post">
+                <label for="name" th:text="#{customer.name}">Name: </label>
+                <input type="text" th:field="*{name}"/>
+                <input type="submit" th:value="#{cusForm.submit}" name="submit" class="submit"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
